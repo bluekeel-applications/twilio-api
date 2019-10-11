@@ -1,11 +1,11 @@
 const request = require('request-promise-native');
-const util = require('./src/utils');
+const util = require('./utils');
 
 exports.handler = async (event, callback) => {
-    const TWILIO_ACCOUNT = 'AC1d034689ac2299b3dbf111206d4d5c61';
-    const TWILIO_API_KEY = '978c27c58f4239b64f193161539ab7ec';
-    const SEND_SMS_FROM = '+18882747732';
-    const SEND_SMS_TO = '+13039038302';
+    const TWILIO_ACCOUNT = process.env.TWILIO_ACCOUNT;
+    const TWILIO_API_KEY = process.env.TWILIO_API_KEY;
+    const SEND_SMS_FROM = process.env.SEND_SMS_FROM;
+    const SEND_SMS_TO = process.env.SEND_SMS_TO;
     const SEND_SMS_NUMBER = event.pathParameters;
 
     console.log('inbound number:', SEND_SMS_NUMBER);
